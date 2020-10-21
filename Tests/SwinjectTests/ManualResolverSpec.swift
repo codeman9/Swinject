@@ -17,6 +17,10 @@ class MyAssembly: Assembly {
             return Sushi()
         }
 
+        container.register(BasicViewController.self) { _ in
+            return BasicViewController()
+        }
+
         container.registerManualConstruction(BasicViewController.self) { (resolver, basicViewController) in
             let food = resolver.resolve(Food.self)!
 
